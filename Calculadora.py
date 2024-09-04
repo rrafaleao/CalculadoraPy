@@ -71,7 +71,7 @@ class InterfaceCalculadora:
         botaoLimpar.place(x=98,y=408)
         botaoLimpar.config(width=4, height=3)
 
-        botaoIgual = Button(janela, text=("="),font=("Arial", 15),bg=("#5C8EE0"), command=lambda: self.numero.resultado(1))
+        botaoIgual = Button(janela, text=("="),font=("Arial", 15),bg=("#5C8EE0"), command= self.numero.calcular)
         botaoIgual.place(x=208,y=408)
         botaoIgual.config(width=4, height=3)
 
@@ -79,15 +79,15 @@ class InterfaceCalculadora:
         botaoMais.place(x=263, y=150)
         botaoMais.config(width=4, height=3)
 
-        botaoMenos = Button(janela, text=("-"), font=("Arial", 15), command=lambda: self.numero.valores(1))
+        botaoMenos = Button(janela, text=("-"), font=("Arial", 15), command=lambda: self.numero.valores("-"))
         botaoMenos.place(x=263, y=236)
         botaoMenos.config(width=4, height=3)
 
-        botaoVezes = Button(janela, text=("x"), font=("Arial", 15), command=lambda: self.numero.valores(1))
+        botaoVezes = Button(janela, text=("x"), font=("Arial", 15), command=lambda: self.numero.valores("*"))
         botaoVezes.place(x=263, y=322)
         botaoVezes.config(width=4, height=3)
 
-        botaoDivisao = Button(janela, text=("/"), font=("Arial", 15), command=lambda: self.numero.valores(1))
+        botaoDivisao = Button(janela, text=("/"), font=("Arial", 15), command=lambda: self.numero.valores("/"))
         botaoDivisao.place(x=263, y=408)
         botaoDivisao.config(width=4, height=3)
 
@@ -96,8 +96,6 @@ class InterfaceCalculadora:
 
 janela = Tk()
 app = InterfaceCalculadora(janela)
-icone = PhotoImage(file='2374370.png')
-janela.iconphoto(True, icone)
 janela.geometry("400x500")
 janela.title("Calculadora")
 janela.configure(bg="Gray")
